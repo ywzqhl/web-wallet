@@ -10,15 +10,26 @@
  */
 
 import React from 'react';
-import { FormattedMessage } from 'react-intl';
-import messages from './messages';
+// import { FormattedMessage, FormattedDate } from 'react-intl';
+// import { PageContent } from '../Wrapper';
+// import messages from './messages';
 
 export default class HomePage extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
   render() {
     return (
-      <h1>
-        <FormattedMessage {...messages.header} />
-      </h1>
+      <div id="account-overview-section">
+        <div id="account-overview-title">Account Overview</div>
+        <table id="account-overview-items">
+          <thead>
+            <tr><td></td><td>type</td><td>account name</td><td>status</td><td>currency</td><td>balance</td></tr>
+          </thead>
+          <tbody>
+            <tr><td></td><td>checking</td><td>1267451**** - WOLFE</td><td>active</td><td>USD</td><td>$6,266.33</td></tr>
+            <tr><td></td><td>savings</td><td>5719371**** - MAENGUNE</td><td>active</td><td>USD</td><td>$10,998.10</td></tr>
+            <tr><td></td><td>savings</td><td>7125781**** - KAISER</td><td>deactivated</td><td>USD</td><td>$23.86</td></tr>
+          </tbody>
+        </table>
+      </div>
     );
   }
 }

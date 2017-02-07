@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   data-name="Layer 7"
+   viewBox="0 0 32 40"
+   x="0px"
+   y="0px"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.5 r10040"
+   width="100%"
+   height="100%"
+   sodipodi:docname="cheque.svg">
+  <metadata
+     id="metadata24">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1027"
+     id="namedview22"
+     showgrid="false"
+     inkscape:zoom="11.8"
+     inkscape:cx="16.226064"
+     inkscape:cy="18.388552"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg2" />
+  <defs
+     id="defs4">
+    <style
+       id="style6">.cls-1{fill:#231f20;}</style>
+  </defs>
+  <title
+     id="title8">finance</title>
+  <rect
+     class="cls-1"
+     x="13"
+     y="20.99999"
+     width="14"
+     height="1"
+     rx="0.5"
+     ry="0.5"
+     id="rect10" />
+  <path
+     class="cls-1"
+     d="M29,26H3a1.001,1.001,0,0,1-1-1V11a1.001,1.001,0,0,1,1-1H19a0.5,0.5,0,0,1,0,1H3V25H29V10.5a0.5,0.5,0,0,1,1,0V25A1.001,1.001,0,0,1,29,26Z"
+     id="path12" />
+  <path
+     class="cls-1"
+     d="M30.82843,4a1,1,0,0,0-1.41425,0l-0.70709.70709a0.99993,0.99993,0,0,0-1.41418,0L15.30457,16.69543,14.77423,19.347l-0.20929.20929a0.5,0.5,0,0,0,.70715.70709l0.20923-.20923,2.65167-.53033L30.12134,7.53552a1.00008,1.00008,0,0,0,0-1.41425l0.70709-.70709A1,1,0,0,0,30.82843,4ZM17.64,18.60266l-1.41418-1.41425L27.999,5.41425,28,5.41418l1.41425,1.41425Z"
+     id="path14" />
+  <path
+     class="cls-1"
+     d="M8.78564,15.00038a1.23014,1.23014,0,0,1,1.01172.4248A0.87383,0.87383,0,0,1,10,16.00038a0.5,0.5,0,0,0,1,0,1.85767,1.85767,0,0,0-.40869-1.18262,2.19978,2.19978,0,0,0-1.80566-.81738c-1.12762,0-2.4198.80792-2.72,3H5.5a0.5,0.5,0,0,0,0,1H6a7.35581,7.35581,0,0,0,.06567,1H5.5a0.5,0.5,0,0,0,0,1H6.30829a2.66082,2.66082,0,0,0,2.47736,2,2.19978,2.19978,0,0,0,1.80566-.81738A1.85767,1.85767,0,0,0,11,20.00038a0.5,0.5,0,0,0-1,0,0.87383,0.87383,0,0,1-.20264.5752,1.23014,1.23014,0,0,1-1.01172.4248,1.55768,1.55768,0,0,1-1.38727-1H8.5a0.5,0.5,0,0,0,0-1H7.08826a5.81171,5.81171,0,0,1-.08826-1H8.5a0.5,0.5,0,0,0,0-1H7.08826C7.30182,15.76393,7.91687,15.00038,8.78564,15.00038Z"
+     id="path16" />
+</svg>

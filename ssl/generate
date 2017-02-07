@@ -1,0 +1,22 @@
+#!/bin/bash
+echo "Generating an SSL private key to sign your certificate..."
+openssl genrsa -des3 -out wallet.eine.key 1024
+
+echo "Generating a Certificate Signing Request..."
+openssl req -new -key wallet.eine.key -out wallet.eine.csr
+
+echo "Removing passphrase from key (for nginx)..."
+cp wallet.eine.key wallet.eine.key.org
+openssl rsa -in wallet.eine.key.org -out wallet.eine.key
+rm wallet.eine.key.org
+
+echo "Generating certificate..."
+openssl x509 -req -days 365 -in wallet.eine.csr -signkey wallet.eine.key -out wallet.eine.crt
+
+echo "Copying certificate (wallet.eine.crt) to /etc/ssl/certs/"
+# mkdir -p  /etc/ssl/certs
+cp wallet.eine.crt ./certs/
+
+echo "Copying key (wallet.eine.key) to /etc/ssl/private/"
+# mkdir -p  /etc/ssl/private
+cp wallet.eine.key ./private/

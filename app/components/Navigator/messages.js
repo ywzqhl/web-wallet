@@ -17,11 +17,11 @@ export default defineMessages({
 
   accounts_section: {
     id: 'app.components.HomePage.nav.accounts_section',
-    defaultMessage: '[accounts]',
+    defaultMessage: 'accounts',
   },
   summary: {
     id: 'app.components.HomePage.nav.summary',
-    defaultMessage: 'summary',
+    defaultMessage: 'account summary',
   },
   accounts: {
     id: 'app.components.HomePage.nav.accounts',
@@ -30,7 +30,7 @@ export default defineMessages({
 
   transactions_section: {
     id: 'app.components.HomePage.nav.transactions_section',
-    defaultMessage: '[transactions]',
+    defaultMessage: 'transactions',
   },
   transfer_money: {
     id: 'app.components.HomePage.nav.transfer_money',
@@ -47,7 +47,7 @@ export default defineMessages({
 
   loans_section: {
     id: 'app.components.HomePage.nav.loans_section',
-    defaultMessage: '[loans]',
+    defaultMessage: 'loans',
   },
   apply_for_loan: {
     id: 'app.components.HomePage.nav.apply_for_loan',

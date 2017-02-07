@@ -19,10 +19,10 @@ export default function createRoutes(store) {
   return [
     {
       path: '/',
-      name: 'home',
+      name: 'account-summary',
       getComponent(nextState, cb) {
         const importModules = Promise.all([
-          import('containers/HomePage'),
+          import('containers/AccountSummary'),
         ]);
 
         const renderRoute = loadModule(cb);
@@ -33,7 +33,8 @@ export default function createRoutes(store) {
 
         importModules.catch(errorLoading);
       },
-    }, {
+    },
+    {
       path: '*',
       name: 'notfound',
       getComponent(nextState, cb) {
