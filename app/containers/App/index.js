@@ -13,6 +13,8 @@
 
 import React from 'react';
 import { Navigator } from '../../components/Navigator';
+import { UserSettings } from '../../components/UserSettings';
+
 import {
   AppContainer,
   Page,
@@ -32,8 +34,10 @@ import {
 } from '../Wrapper';
 
 import ViktorAvatar from '../../images/viktor.jpg';
-import NotificationIcon from '../../images/notifications.svg';
-import MessagesIcon from '../../images/messages.svg';
+import NotificationNoneIcon from '../../images/notification-none.svg';
+import NotificationNewIcon from '../../images/notification-new.svg';
+import NotificationAlertIcon from '../../images/notification-alert.svg';
+import MessagesNoneIcon from '../../images/messages-none.svg';
 
 export default class App extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
 
@@ -49,8 +53,9 @@ export default class App extends React.PureComponent { // eslint-disable-line re
           <PageHeader>
             <PageHeaderSearchField id="search-site" type="search" name="search-site" placeholder="search site" />
             <PageHeaderControls>
-              <PageHeaderControlNotifications src={NotificationIcon} role="presentation" />
-              <PageHeaderMessages src={MessagesIcon} role="presentation" />
+              <PageHeaderControlNotifications src={NotificationNoneIcon} role="presentation" />
+              <PageHeaderMessages src={MessagesNoneIcon} role="presentation" />
+              <UserSettings />
             </PageHeaderControls>
           </PageHeader>
           <PageHeaderSalute>

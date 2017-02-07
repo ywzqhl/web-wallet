@@ -21,7 +21,7 @@ const PageHeader = styled.header`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: .7rem 1rem;
+  padding: 1rem;
   background-color: #FFF;
   align-items: center;
 `;
@@ -99,6 +99,11 @@ const PageHeaderControls = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: baseline;
+
+  & > *:not(:last-child) {
+    margin-right: 1rem;
+  }
 `;
 
 const PageHeaderControlNotifications = styled.img`
@@ -172,6 +177,10 @@ const EineLogo = styled.img`
 
 `;
 
+const UserSettings = styled.div`
+
+`;
+
 module.exports.AppContainer = AppContainer;
 module.exports.Page = Page;
 module.exports.PageContent = PageContent;
@@ -189,3 +198,4 @@ module.exports.UserMessage = UserMessage;
 module.exports.TotalBallance = TotalBallance;
 module.exports.Block = Block;
 module.exports.EineLogo = EineLogo;
+module.exports.UserSettings = UserSettings;
