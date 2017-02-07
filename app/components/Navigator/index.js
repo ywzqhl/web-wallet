@@ -10,6 +10,10 @@ const NavHeader = styled.header`
   display: flex;
   justify-content: center;
   margin: 3.5rem 0;
+  font-family: 'Dancing Script';
+  font-size: 6rem;
+  font-weight: 500;
+  color: #FFF;
 `;
 
 const NavFooter = styled.footer`
@@ -19,6 +23,7 @@ const NavFooter = styled.footer`
   font-size: .75rem;
   justify-content: center;
   padding: 2rem 0;
+  font-family: 'Roboto'
 `;
 
 const MenuSectionTitle = styled.div`
@@ -69,7 +74,10 @@ class Navigator extends React.PureComponent { // eslint-disable-line react/prefe
   render() {
     return (
       <div className={this.props.className}>
-        <NavHeader><img src={EineLogoSVG} width="50%" role="presentation" /></NavHeader>
+        <NavHeader>
+          eine
+          {/* <img src={EineLogoSVG} width="50%" role="presentation" /> */}
+        </NavHeader>
         <MenuItems>
           <MenuSectionTitle><FormattedMessage {...messages.accounts_section} /></MenuSectionTitle>
           <MenuItem><StyledLink to="/"><FormattedMessage {...messages.summary} /></StyledLink></MenuItem>

@@ -10,15 +10,14 @@ injectGlobal`
   }
 
   body {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: 'Roboto';
   }
 
   body.fontLoaded {
-    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: 'Roboto';
   }
 
   #app {
-    background-color: #B4EEFF;
     min-height: 100%;
     min-width: 100%;
     display: flex;
@@ -29,7 +28,7 @@ injectGlobal`
 
   p,
   label {
-    font-family: Georgia, Times, 'Times New Roman', serif;
+    font-family: 'Roboto';
     line-height: 1.5em;
   }
 `;

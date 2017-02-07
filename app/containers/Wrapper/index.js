@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+import SearchIcon from '../../images/search-icon.svg';
+
 
 const AppContainer = styled.article`
   display: flex;
@@ -41,13 +43,56 @@ const PageContent = styled.article`
 
 const PageHeaderSearchField = styled.input`
   background-color: #EDEDED;
+  background-image: url(${SearchIcon});
+  background-position: 4px 4px;
+  background-repeat: no-repeat;
+  background-size: 1.5rem;
   border-radius: 3px;
+  color: #B1B1B1;
   display: flex;
   flex-direction: row;
+  line-height: 1rem;
+  margin-left: 1rem;
   max-width: 30%;
   min-width: 30%;
-  padding: .5rem 1rem;
+  padding: .5rem 0 .5rem 2.5rem;
   pointer-events: all;
+
+  &[placeholder]          {
+    text-overflow:ellipsis;
+  }
+
+  &::-moz-placeholder     {
+    text-overflow:ellipsis;
+  }
+
+  &:-moz-placeholder      {
+    text-overflow:ellipsis;
+  }
+
+  &:-ms-input-placeholder {
+    text-overflow:ellipsis;
+  }
+
+  &:focus::-webkit-input-placeholder {
+    color: transparent;
+  }
+
+  &:focus::-moz-placeholder {
+    color: transparent;
+  }
+
+  &:focus:-moz-placeholder {
+    color: transparent;
+  }
+
+  &:focus:-ms-input-placeholder {
+    color: transparent;
+  }
+
+  &:focus {
+    outline: none;
+  }
 `;
 
 const PageHeaderControls = styled.div`
@@ -56,10 +101,9 @@ const PageHeaderControls = styled.div`
   justify-content: space-between;
 `;
 
-const PageHeaderControlNotifications = styled.a`
-  width: 32px;
-  height: 32px;
-  background-color: green;
+const PageHeaderControlNotifications = styled.img`
+  width: 26px;
+  height: 26px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -67,10 +111,9 @@ const PageHeaderControlNotifications = styled.a`
   pointer-events: all;
 `;
 
-const PageHeaderMessages = styled.a`
-  width: 32px;
-  height: 32px;
-  background-color: green;
+const PageHeaderMessages = styled.img`
+  width: 26px;
+  height: 26px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -83,7 +126,7 @@ const PageHeaderSalute = styled.section`
   flex-direction: row;
   justify-content: flex-start;
   align-items: stretch;
-  padding: 1rem;
+  padding: 1.75rem;
   background-color: #4595D1;
 `;
 

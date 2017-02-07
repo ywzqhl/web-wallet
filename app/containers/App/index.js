@@ -30,7 +30,10 @@ import {
   TotalBallance,
   Block,
 } from '../Wrapper';
+
 import ViktorAvatar from '../../images/viktor.jpg';
+import NotificationIcon from '../../images/notifications.svg';
+import MessagesIcon from '../../images/messages.svg';
 
 export default class App extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
 
@@ -44,10 +47,10 @@ export default class App extends React.PureComponent { // eslint-disable-line re
         <Navigator />
         <Page>
           <PageHeader>
-            <PageHeaderSearchField id="search-site" type="search" name="search-site" placeholder="search site"></PageHeaderSearchField>
+            <PageHeaderSearchField id="search-site" type="search" name="search-site" placeholder="search site" />
             <PageHeaderControls>
-              <PageHeaderControlNotifications>N</PageHeaderControlNotifications>
-              <PageHeaderMessages>M</PageHeaderMessages>
+              <PageHeaderControlNotifications src={NotificationIcon} role="presentation" />
+              <PageHeaderMessages src={MessagesIcon} role="presentation" />
             </PageHeaderControls>
           </PageHeader>
           <PageHeaderSalute>
