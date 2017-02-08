@@ -133,6 +133,56 @@ const PageHeaderSalute = styled.section`
   align-items: stretch;
   padding: 1.75rem;
   background-color: #4595D1;
+
+  & a {
+    pointer-events: all;
+  }
+
+  & > div > div {
+    align-items: center;
+    justify-content: center;
+  }
+
+  & > div:not(:last-of-type) {
+    border-right: 1px solid rgba(255, 255, 255, 0.25);
+  }
+
+  & > div:first-of-type {
+    justify-content: flex-start;
+  }
+
+  & > div:last-of-type {
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-end;
+
+    & > a {
+      display: flex;
+      background-color: #FFF;
+      width: 8rem;
+      padding: .25rem;
+      border-radius: 3px;
+      border: none;
+      justify-content: center;
+      text-transform: capitalize;
+      text-decoration: none;
+      color: #5BDBF8;
+      font-size: .8rem;
+      transition: box-shadow ease-in-out 0.1s;
+    }
+
+    & > a:hover {
+      border-color: #000;
+      box-shadow: 0 0 3px 2px rgba(255, 255, 255, 0.75);
+    }
+
+    & > a:active {
+      box-shadow: 0 0 0px 1px #add0eb, inset 0 0 3px rgba(0, 0, 0, 0.5);
+      transition: box-shadow cubic-bezier(0.4, 0, 0.2, 1) 0s;
+    }
+
+  }
+
 `;
 
 const UserAvatar = styled.img`
@@ -171,6 +221,11 @@ const TotalBallance = styled.div`
 const Block = styled.div`
   display: flex;
   flex: 1;
+
+  & > div {
+    display: flex;
+    flex: 1;
+  }
 `;
 
 const EineLogo = styled.img`
@@ -179,6 +234,10 @@ const EineLogo = styled.img`
 
 const UserSettings = styled.div`
 
+`;
+
+const CallToActionButtons = styled.div`
+  display: flex;
 `;
 
 module.exports.AppContainer = AppContainer;
@@ -199,3 +258,4 @@ module.exports.TotalBallance = TotalBallance;
 module.exports.Block = Block;
 module.exports.EineLogo = EineLogo;
 module.exports.UserSettings = UserSettings;
+module.exports.CallToActionButtons = CallToActionButtons;

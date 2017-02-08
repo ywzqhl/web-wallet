@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router';
 import styled from 'styled-components';
 
 import ViktorAvatar from '../../images/viktor.jpg';
@@ -17,8 +18,8 @@ class UserSettings extends React.PureComponent { // eslint-disable-line react/pr
         <img id="drop-down-arrow" src={ArrowDown} role="presentation" />
         <li>
           <ul>
-            <li>settings</li>
-            <li>logout</li>
+            <li><Link to="/user-settings">settings</Link></li>
+            <li><Link to="/logout">logout</Link></li>
           </ul>
         </li>
       </ul>
@@ -45,17 +46,31 @@ const StyledUserSettings = styled(UserSettings)`
     width: 32px;
     height: 32px;
     border-radius: 50%;
+    pointer-events: none;
   }
 
   & #user-name {
     font-family: 'Roboto';
     font-size: .9rem;
     color: #8ca0b3;
+    pointer-events: none;
   }
 
   & #drop-down-arrow {
     width: 16px;
     height: 16px;
+    pointer-events: none;
+  }
+
+  & a {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: #000;
+  }
+
+  & a:hover {
+    color: #FFF;
   }
 
   & > *:not(:last-child) {
@@ -75,6 +90,7 @@ const StyledUserSettings = styled(UserSettings)`
   &:hover > li {
     display: flex;
     transition: all ease-in 5s;
+    border-radius: 2px;
   }
 
   & > li > ul {
@@ -111,6 +127,8 @@ const StyledUserSettings = styled(UserSettings)`
   &:hover ul {
     display: flex;
     flex-direction: column;
+    font-variant: small-caps;
+    font-family: 'Roboto Condensed';
   }
 `;
 

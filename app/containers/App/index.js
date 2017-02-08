@@ -12,6 +12,7 @@
  */
 
 import React from 'react';
+import { Link } from 'react-router';
 import { Navigator } from '../../components/Navigator';
 import { UserSettings } from '../../components/UserSettings';
 
@@ -68,6 +69,10 @@ export default class App extends React.PureComponent { // eslint-disable-line re
             </Block>
             <Block>
               <TotalBallance title="total ballance">$17,288.29</TotalBallance>
+            </Block>
+            <Block>
+              <Link to="/pay-your-bills">pay your bills</Link>
+              <Link to="/transfer-money">make a transfer</Link>
             </Block>
           </PageHeaderSalute>
           <PageContent>
