@@ -39,48 +39,54 @@ const BlockTitle = styled.header`
   font-size: 1.125rem;
 `;
 
-const STable = styled.table`
+const TABLE = styled.ul`
   display: flex;
   flex-direction: column;
+  margin: 0;
+  padding: .5rem 0;
+`;
+
+const TR = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
   pointer-events: none;
 `;
 
-const SThead = styled.thead`
-  display: flex;
-  justify-content: space-between;
-  text-transform: capitalize;
+const HTR = styled(TR)`
+  background-color: rgba(212, 209, 209, 0.3);
+  color: #8F8F8F;
+  font-size: 1.125rem;
+  font-variant: small-caps;
+  font-weight: 600;
+  padding: .25rem 0;
+  margin-bottom: .5rem;
 `;
 
-const STbody = styled.tbody`
+const TD = styled.div`
+  display: flex;
+  flex: 1;
+  padding: .25rem 0;
+`;
+
+const TDxAR = styled(TD)`
+  justify-content: flex-end;
+  padding-right: 1rem;
+`;
+
+const TDx2 = styled(TD)`
+  flex: 2;
+`;
+
+const TDAuto = styled(TD)`
+  flex: 0 0 75px;
+  padding: .25rem;
+`;
+
+const ScrollbarsStyled = styled(Scrollbars)`
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-`;
-
-const STr = styled.tr`
-  display: flex;
-  flex: 1;
-  justify-content: space-between;
-  padding: 1rem 0 .5rem 0;
-  color: #8D8D8D;
-  text-transform: capitalize;
-  align-items: center;
-`;
-
-const STd = styled.td`
-  display: flex;
-  flex: 3;
-`;
-
-const STdBallance = styled.td`
-  display: flex;
-  flex: 3;
-  justify-content: flex-end;
-`;
-
-const STdEmpty = styled.td`
-  display: flex;
-  flex: 1;
 `;
 
 export default class AccountSummary extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
@@ -88,62 +94,90 @@ export default class AccountSummary extends React.PureComponent { // eslint-disa
     return (
       <FullWidthBlock>
         <BlockTitle>Account Overview</BlockTitle>
-        <Scrollbars
-          style={{ height: 300 }}
-          autoHide
-          hideTracksWhenNotNeeded
-          autoHideTimeout={1000}
-          autoHideDuration={200}
-          autoHeight
-          autoHeightMin={0}
-          autoHeightMax={200}
-          thumbMinSize={30}
-          universal={true}>
-          <STable>
-            <SThead>
-              <STr>
-                <STdEmpty></STdEmpty>
-                <STd>type</STd>
-                <STd>account name</STd>
-                <STd>status</STd>
-                <STd>currency</STd>
-                <STdBallance>balance</STdBallance>
-              </STr>
-            </SThead>
-            <STbody>
-              <STr>
-                <STdEmpty><img src={ChequeIcon} width="36px" height="36px" role="presentation" /></STdEmpty>
-                <STd>checking</STd>
-                <STd>1267451**** - WOLFE</STd>
-                <STd>active</STd>
-                <STd>USD</STd>
-                <STdBallance>
-                  <FormattedNumber value={6266.33} />
-                </STdBallance>
-              </STr>
-              <STr>
-                <STdEmpty><img src={SavingsIcon} width="36px" height="36px" role="presentation" /></STdEmpty>
-                <STd>savings</STd>
-                <STd>5719371**** - MAENGUNE</STd>
-                <STd>active</STd>
-                <STd>USD</STd>
-                <STdBallance>
-                  <FormattedNumber value={10998.10} />
-                </STdBallance>
-              </STr>
-              <STr>
-                <STdEmpty><img src={SavingsIcon} width="36px" height="36px" role="presentation" /></STdEmpty>
-                <STd>savings</STd>
-                <STd>7125781**** - KAISER</STd>
-                <STd>deactivated</STd>
-                <STd>USD</STd>
-                <STdBallance>
-                  <FormattedNumber value={23.86} />
-                </STdBallance>
-              </STr>
-            </STbody>
-          </STable>
-        </Scrollbars>
+        <TABLE>
+          <HTR className="table-header">
+            <TDAuto>&nbsp;</TDAuto>
+            <TD>type</TD>
+            <TDx2>account name</TDx2>
+            <TD>status</TD>
+            <TD>currency</TD>
+            <TDxAR>balance</TDxAR>
+          </HTR>
+          <ScrollbarsStyled
+            style={{ height: 300 }}
+            autoHide
+            hideTracksWhenNotNeeded
+            autoHideTimeout={500}
+            autoHideDuration={50}
+            autoHeight
+            autoHeightMin={0}
+            autoHeightMax={200}
+            thumbMinSize={30}
+            universal
+          >
+            <TR>
+              <TDAuto><img src={ChequeIcon} width="36px" height="36px" role="presentation" /></TDAuto>
+              <TD>checking</TD>
+              <TDx2>1267451**** - WOLFE</TDx2>
+              <TD>active</TD>
+              <TD>USD</TD>
+              <TDxAR>
+                <FormattedNumber value={6266.33} />
+              </TDxAR>
+            </TR>
+            <TR>
+              <TDAuto><img src={SavingsIcon} width="36px" height="36px" role="presentation" /></TDAuto>
+              <TD>savings</TD>
+              <TDx2>5719371**** - MAENGUNE</TDx2>
+              <TD>active</TD>
+              <TD>USD</TD>
+              <TDxAR>
+                <FormattedNumber value={10998.10} />
+              </TDxAR>
+            </TR>
+            <TR>
+              <TDAuto><img src={SavingsIcon} width="36px" height="36px" role="presentation" /></TDAuto>
+              <TD>savings</TD>
+              <TDx2>7125781**** - KAISER</TDx2>
+              <TD>deactivated</TD>
+              <TD>USD</TD>
+              <TDxAR>
+                <FormattedNumber value={23.86} />
+              </TDxAR>
+            </TR>
+
+            <TR>
+              <TDAuto><img src={ChequeIcon} width="36px" height="36px" role="presentation" /></TDAuto>
+              <TD>checking</TD>
+              <TDx2>1267451**** - WOLFE</TDx2>
+              <TD>active</TD>
+              <TD>USD</TD>
+              <TDxAR>
+                <FormattedNumber value={6266.33} />
+              </TDxAR>
+            </TR>
+            <TR>
+              <TDAuto><img src={SavingsIcon} width="36px" height="36px" role="presentation" /></TDAuto>
+              <TD>savings</TD>
+              <TDx2>5719371**** - MAENGUNE</TDx2>
+              <TD>active</TD>
+              <TD>USD</TD>
+              <TDxAR>
+                <FormattedNumber value={10998.10} />
+              </TDxAR>
+            </TR>
+            <TR>
+              <TDAuto><img src={SavingsIcon} width="36px" height="36px" role="presentation" /></TDAuto>
+              <TD>savings</TD>
+              <TDx2>7125781**** - KAISER</TDx2>
+              <TD>deactivated</TD>
+              <TD>USD</TD>
+              <TDxAR>
+                <FormattedNumber value={23.86} />
+              </TDxAR>
+            </TR>
+          </ScrollbarsStyled>
+        </TABLE>
       </FullWidthBlock>
     );
   }
