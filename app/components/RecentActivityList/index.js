@@ -6,6 +6,7 @@ import styled from 'styled-components';
 import SteamLogo from '../../images/steam-logo.svg';
 import PayPalLogo from '../../images/paypal-logo.svg';
 import DribbleLogo from '../../images/dribble-logo.svg';
+import SpotifyLogo from '../../images/spotify-logo.svg';
 
 import {
   HalfWidthBlock,
@@ -34,9 +35,12 @@ const TDLogo = styled(TD)`
 `;
 
 const TRMonth = styled(TR)`
-  font-variant: small-caps;
+  background-color: #f2f1f1;
+  color: #857d7d;
   font-size: 1.2rem;
-  color: #E1E1E6;
+  font-variant: small-caps;
+  margin: .5rem 0;
+  padding-left: .5rem;
 `;
 
 const TDMoDay = styled(TD)`
@@ -169,6 +173,22 @@ export default class RecentActivityList extends React.PureComponent { // eslint-
               </TDMProduct>
               <TDPrice>
                 <FormattedNumber value={-19.99} style={'currency'} currency={'USD'} minimumFractionDigits={2} maximumFractionDigits={2} />
+                <FormattedTime hour="2-digit" minute="2-digit" value={new Date()} />
+              </TDPrice>
+            </TR>
+            <TRMonth>february</TRMonth>
+            <TR>
+              <TDMoDay>
+                <div>feb</div>
+                <div>01</div>
+              </TDMoDay>
+              <TDLogo><img src={SpotifyLogo} role="presentation" /></TDLogo>
+              <TDMProduct>
+                <div>Spotify Premium</div>
+                <div>Subscription</div>
+              </TDMProduct>
+              <TDPrice>
+                <FormattedNumber value={-9.99} style={'currency'} currency={'USD'} minimumFractionDigits={2} maximumFractionDigits={2} />
                 <FormattedTime hour="2-digit" minute="2-digit" value={new Date()} />
               </TDPrice>
             </TR>
