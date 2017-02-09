@@ -102,7 +102,7 @@ export default class ExpensesReport extends React.PureComponent { // eslint-disa
         <BlockTitle>expenses report</BlockTitle>
         <ResponsiveContainer width="100%" height={400}>
           <LineChart width={600} height={300} data={data} margin={{ top: 0, right: 50, bottom: 50, left: 30 }}>
-            <Line type="monotone" dataKey="needs" stroke="#8884d8" />
+            <Line type="monotone" dataKey="needs" stroke="#1b551b" />
             <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
             <XAxis dataKey="name" tick={<CustomizedAxisTick />} padding={{ left: 10, right: 10 }} />
             <YAxis dataKey="needs" />
