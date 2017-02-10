@@ -116,8 +116,8 @@ append-transform@^0.4.0:
     default-require-extensions "^1.0.0"
 
 aproba@^1.0.3:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/aproba/-/aproba-1.1.0.tgz#4d8f047a318604e18e3c06a0e52230d3d19f147b"
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/aproba/-/aproba-1.1.1.tgz#95d3600f07710aa0e9298c726ad5ecf2eacbabab"
 
 archive-type@^3.0.0, archive-type@^3.0.1:
   version "3.2.0"
@@ -1341,8 +1341,8 @@ buffer@^4.3.0:
     isarray "^1.0.0"
 
 buffer@^5.0.0:
-  version "5.0.3"
-  resolved "https://registry.yarnpkg.com/buffer/-/buffer-5.0.3.tgz#90d5b2dbcef4004e7e307d0e488595a302e1f8fd"
+  version "5.0.4"
+  resolved "https://registry.yarnpkg.com/buffer/-/buffer-5.0.4.tgz#d76fee8f6dbe7c112d6312e492ed9979127b34dd"
   dependencies:
     base64-js "^1.0.2"
     ieee754 "^1.1.4"
@@ -2052,11 +2052,15 @@ d3-color@1:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/d3-color/-/d3-color-1.0.2.tgz#83cb4b3a9474e40795f009d97e97a15649830bbc"
 
+d3-ease@^1.0.0:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/d3-ease/-/d3-ease-1.0.2.tgz#b486f8f3ca308ca7be38197d65622b6e30983377"
+
 d3-format@1:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/d3-format/-/d3-format-1.0.2.tgz#138618320b4bbeb43b5c0ff30519079fbbd7375e"
 
-d3-interpolate@1:
+d3-interpolate@1, d3-interpolate@^1.1.1:
   version "1.1.3"
   resolved "https://registry.yarnpkg.com/d3-interpolate/-/d3-interpolate-1.1.3.tgz#e119c91b6be4941e581675ca3e1279bb92bd2c9b"
   dependencies:
@@ -2066,7 +2070,7 @@ d3-path@1:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/d3-path/-/d3-path-1.0.3.tgz#60103d0dea9a6cd6ca58de86c6d56724002d3fde"
 
-d3-scale@1.0.4:
+d3-scale@1.0.4, d3-scale@^1.0.0:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/d3-scale/-/d3-scale-1.0.4.tgz#50e28bf6a193b706745528515ed9b3d44205a033"
   dependencies:
@@ -2078,7 +2082,7 @@ d3-scale@1.0.4:
     d3-time "1"
     d3-time-format "2"
 
-d3-shape@1.0.4:
+d3-shape@1.0.4, d3-shape@^1.0.0:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/d3-shape/-/d3-shape-1.0.4.tgz#145ee100ccbec42f8e3f1996cd05c786f79fe1c6"
   dependencies:
@@ -2093,6 +2097,14 @@ d3-time-format@2:
 d3-time@1:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/d3-time/-/d3-time-1.0.4.tgz#2ceba09a76b7450c992a1ded4e10fc6195e69649"
+
+d3-timer@^1.0.0:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/d3-timer/-/d3-timer-1.0.4.tgz#adaf7f60c7b54c99b2ffabd28c15a0c108a75321"
+
+d3-voronoi@^1.0.0:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/d3-voronoi/-/d3-voronoi-1.1.1.tgz#998544dca98ef0e89a6c40c0bac3510d1bc1b8b9"
 
 d@^0.1.1, d@~0.1.1:
   version "0.1.1"
@@ -3171,6 +3183,14 @@ formatio@1.1.1:
   resolved "https://registry.yarnpkg.com/formatio/-/formatio-1.1.1.tgz#5ed3ccd636551097383465d996199100e86161e9"
   dependencies:
     samsam "~1.1"
+
+formidable-charts@latest:
+  version "0.0.7"
+  resolved "https://registry.yarnpkg.com/formidable-charts/-/formidable-charts-0.0.7.tgz#1a6252170dc0f0e0af8732b3817636cdc62434b9"
+  dependencies:
+    victory-chart "^14.0.4"
+    victory-core "^10.0.3"
+    victory-pie "^8.0.0"
 
 forwarded@~0.1.0:
   version "0.1.0"
@@ -4936,11 +4956,11 @@ lodash.uniq@^4.3.0:
   version "4.5.0"
   resolved "https://registry.yarnpkg.com/lodash.uniq/-/lodash.uniq-4.5.0.tgz#d0225373aeb652adc1bc82e4945339a842754773"
 
-lodash@4.17.2, lodash@^4.0.0, lodash@^4.14.0, lodash@^4.15.0, lodash@^4.16.4, lodash@^4.2.0, lodash@^4.2.1, lodash@^4.3.0, lodash@^4.6.1:
+lodash@4.17.2, lodash@^4.2.0:
   version "4.17.2"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.2.tgz#34a3055babe04ce42467b607d700072c7ff6bf42"
 
-lodash@~4.17.4:
+lodash@^4.0.0, lodash@^4.12.0, lodash@^4.14.0, lodash@^4.15.0, lodash@^4.16.4, lodash@^4.2.1, lodash@^4.3.0, lodash@^4.6.1, lodash@~4.17.4:
   version "4.17.4"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.4.tgz#78203a4d1c328ae1d86dca6460e369b57f4055ae"
 
@@ -7639,6 +7659,33 @@ verror@1.3.6:
   resolved "https://registry.yarnpkg.com/verror/-/verror-1.3.6.tgz#cff5df12946d297d2baaefaa2689e25be01c005c"
   dependencies:
     extsprintf "1.0.2"
+
+victory-chart@^14.0.4:
+  version "14.0.4"
+  resolved "https://registry.yarnpkg.com/victory-chart/-/victory-chart-14.0.4.tgz#c1fe2342164c1b8e9829c26634734177c39bb140"
+  dependencies:
+    d3-voronoi "^1.0.0"
+    lodash "^4.12.0"
+    victory-core "^10.0.0"
+
+victory-core@^10.0.0, victory-core@^10.0.3:
+  version "10.0.3"
+  resolved "https://registry.yarnpkg.com/victory-core/-/victory-core-10.0.3.tgz#1b00b0ed29873ca9aa6c06dcab7709c4cade5f40"
+  dependencies:
+    d3-ease "^1.0.0"
+    d3-interpolate "^1.1.1"
+    d3-scale "^1.0.0"
+    d3-shape "^1.0.0"
+    d3-timer "^1.0.0"
+    lodash "^4.12.0"
+
+victory-pie@^8.0.0:
+  version "8.0.0"
+  resolved "https://registry.yarnpkg.com/victory-pie/-/victory-pie-8.0.0.tgz#99d8cac6b108ee9bfc485020599ff6d5f8c27fef"
+  dependencies:
+    d3-shape "^1.0.0"
+    lodash "^4.12.0"
+    victory-core "^10.0.0"
 
 vinyl-assign@^1.0.1:
   version "1.2.1"

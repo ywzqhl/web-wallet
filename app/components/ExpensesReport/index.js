@@ -1,31 +1,38 @@
 import React, { PropTypes } from 'react';
+import styled from 'styled-components';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Brush, Legend, ResponsiveContainer } from 'recharts';
 import {
   HalfWidthBlock,
   BlockTitle,
 } from '../Blocks';
 
-const data = [
-  { name: 'Jan 2016', needs: 225, wants: 156, amt: 122 },
-  { name: 'Feb 2016', needs: 200, wants: 108, amt: 178 },
-  { name: 'Mar 2016', needs: 105, wants: 209, amt: 72 },
-  { name: 'Apr 2016', needs: 227, wants: 20, amt: 3 },
-  { name: 'May 2016', needs: 39, wants: 151, amt: 244 },
-  { name: 'Jun 2016', needs: 121, wants: 76, amt: 96 },
-  { name: 'Jul 2016', needs: 228, wants: 16, amt: 215 },
-  { name: 'Aug 2016', needs: 186, wants: 117, amt: 218 },
-  { name: 'Sep 2016', needs: 198, wants: 57, amt: 46 },
-  { name: 'Oct 2016', needs: 143, wants: 171, amt: 69 },
-  { name: 'Nov 2016', needs: 197, wants: 58, amt: 195 },
-  { name: 'Dec 2016', needs: 206, wants: 222, amt: 84 },
-];
+const genDatesArray = () => {
+  const startDate = new Date(2016, 1, 1);
+  const endDate = new Date(2016, 3, 1);
+  const mil = 86400000;
+  const MIN = 0;
+  const MAX = 500;
+  const result = [];
+  for (let i = startDate.getTime(); i < endDate.getTime(); i += mil) {
+    result.push(
+      {
+        date: new Date(i),
+        needs: Math.floor (Math.random() * (MAX - MIN)) + MIN,
+        wants: Math.floor (Math.random() * (MAX - MIN)) + MIN
+      }
+
+    );
+  }
+  return result;
+}
 
 class CustomizedAxisTick extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
   render() {
     const { x, y, stroke, payload } = this.props;
+    // console.log(payload);
     return (
       <g transform={`translate(${x},${y})`}>
-        <text x={0} y={0} dy={16} textAnchor="start" fill="#666" transform="rotate(-35)" fontSize="10px">{payload.value}</text>
+        <text x={0} y={0} dy={16} textAnchor="start" fill="#666" transform="rotate(-35)" fontSize="8px">{payload.value}</text>
       </g>
     );
   }
@@ -95,25 +102,156 @@ class CustomTooltip extends React.PureComponent { // eslint-disable-line react/p
   }
 }
 
+const LineChartStyled = styled(LineChart)`
+  display: flex;
+  flex-direction: row;
+
+  /*background-color: yellow;*/
+`;
+
 export default class ExpensesReport extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
   render() {
+    const d = genDatesArray();
     return (
       <HalfWidthBlock>
         <BlockTitle>expenses report</BlockTitle>
         <ResponsiveContainer width="100%" height={400}>
-          <LineChart width={600} height={300} data={data} margin={{ top: 0, right: 50, bottom: 50, left: 30 }}>
+          <LineChartStyled width={600} height={300} data={d} margin={{ top: 0, right: 50, bottom: 50, left: 30 }}>
             <Line type="monotone" dataKey="needs" stroke="#1b551b" />
-            <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
-            <XAxis dataKey="name" tick={<CustomizedAxisTick />} padding={{ left: 10, right: 10 }} />
+            <CartesianGrid stroke="rgba(213, 213, 213, 0.5)" strokeDasharray="3 3" />
+            <XAxis dataKey="date" tick={<CustomizedAxisTick />} padding={{ left: 10, right: 10 }} />
             <YAxis dataKey="needs" />
             <Tooltip />
-            <Tooltip content={<CustomTooltip />} />
+            {/* <Tooltip content={<CustomTooltip />} /> */}
             <Line type="monotone" dataKey="wants" stroke="#ff0000" activeDot={{ r: 8 }} />
-            <Brush dataKey="name" height={30} stroke="#8884d8" />
-            {/* <Legend verticalAlign="top" wrapperStyle={{ lineHeight: '20px' }} /> */}
-          </LineChart>
+            <Brush
+              dataKey="date"
+              width={400}
+              height={30}
+              stroke="#8884d8"
+              data={d}
+              startIndex={10}
+              endIndex={d.length - 10}
+              x={100}
+              y={50}
+            />
+            <Legend verticalAlign="top" wrapperStyle={{ lineHeight: '20px' }} height={36} />
+          </LineChartStyled>
         </ResponsiveContainer>
       </HalfWidthBlock>
     );
   }
 }
+
+// export default class ExpensesReport extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
+//
+//   constructor (props) {
+//     super(props);
+//   }
+//
+//   state = {
+//     data: this.genDatesArray(),
+//   }
+//
+//   formatDate(d) {
+//     let dd = d.getDate();
+//     if (dd < 10) dd = '0' + dd;
+//
+//     let mm = d.getMonth()+1;
+//     if (mm < 10) mm = '0' + mm;
+//
+//     let yy = d.getFullYear() % 100;
+//     if (yy < 10) yy = '0' + yy;
+//
+//     return `${yy}-${mm}-${dd}`;
+//   }
+//
+//   genDatesArray() {
+//     const startDate = new Date(2016, 1, 1);
+//     const endDate = new Date(2016, 2, 1);
+//     const mil = 86400000;
+//     const MIN = 0;
+//     const MAX = 500;
+//     const result = [];
+//     for (let i = startDate.getTime(); i < endDate.getTime(); i += mil) {
+//       result.push(
+//         {
+//           // date: this.formatDate(new Date(i)),
+//           date: new Date(i),
+//           needs: Math.floor(Math.random() * (MAX - MIN)) + MIN,
+//           wants: Math.floor(Math.random() * (MAX - MIN)) + MIN,
+//         }
+//
+//       );
+//     }
+//     console.log(result);
+//     return result;
+//   }
+//
+//   handleZoom(domain) {
+//     // console.log('handleZoom:', domain);
+//     this.setState({ selectedDomain: domain });
+//   }
+//
+//   handleBrush(domain) {
+//     // console.log('handleBrush:', domain);
+//     this.setState({ zoomDomain: domain });
+//   }
+//
+//   render() {
+//     return (
+//       <HalfWidthBlock>
+//         <LineChart />
+//         {/* <BlockTitle>expenses report</BlockTitle>
+//           <VictoryChart
+//           scale={{x: 'time', y: 'linear'}}
+//           data={this.state.data}
+//           x="date"
+//           y="wants"
+//           theme={VictoryTheme.material}
+//           domainPadding={20}
+//           animate={{
+//             duration: 2000,
+//             onLoad: {
+//               duration: 1000
+//             },
+//             onEnter: {
+//               duration: 250,
+//               before: () => (
+//                 {y: 0}
+//               )
+//             }
+//           }}
+//           containerComponent={
+//             <VictoryZoomContainer
+//               responsive={true}
+//               zoomDomain={this.state.zoomDomain}
+//               onDomainChange={this.handleZoom.bind(this)}
+//               data={this.state.data}
+//             />
+//           }
+//           >
+//           <VictoryLine
+//             scale={{ x: 'time', y: 'linear' }}
+//             data={this.state.data}
+//             x="date"
+//             y="wants"
+//             style={{
+//               data: {
+//                   opacity: 0.17,
+//                   stroke: 'red',
+//                   strokeWidth: 3,
+//               },
+//               labels: {
+//                   fontSize: 10,
+//               },
+//                 padding: 0,
+//                 standalone: true,
+//                 label: 'wants',
+//             }}
+//           />
+//         </VictoryChart> */}
+//       </HalfWidthBlock>
+//     );
+//   }
+// }

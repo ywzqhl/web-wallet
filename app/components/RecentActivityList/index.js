@@ -94,17 +94,29 @@ const TDMProduct = styled(TDx2)`
 
 const TDPrice = styled(TD)`
   flex-direction: column;
-  align-items: flex-end;
+  align-items: stretch;
   padding-right: .5rem;
 
   & > :first-child {
+    display: flex;
     color: #7F7F7F;
     font-size: 1.3rem;
+    flex-direction: column;
+    align-items: stretch;
+    align-content: stretch;
+
+    & > span {
+      display: flex;
+      justify-content: flex-end;
+    }
   }
 
   & > :last-child {
+    display: flex;
     color: #D5D5D5;
     font-size: .8rem;
+    flex-direction: row;
+    justify-content: flex-end;
   }
 `;
 
@@ -112,6 +124,16 @@ const ScrollbarsStyled = styled(Scrollbars)`
   display: flex;
   flex-direction: column;
 `;
+
+class FormattedNumberStyled extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
+  render() {
+    return(
+      <div style={{ color: this.props.value < 0 ? 'red' : 'green' }}>
+        <FormattedNumber {...this.props} />
+      </div>
+    );
+  }
+}
 
 export default class RecentActivityList extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
   render() {
@@ -125,8 +147,8 @@ export default class RecentActivityList extends React.PureComponent { // eslint-
             autoHideTimeout={500}
             autoHideDuration={50}
             autoHeight
-            autoHeightMin={0}
-            autoHeightMax={200}
+            autoHeightMin={400}
+            autoHeightMax={400}
             thumbMinSize={30}
             universal
           >
@@ -142,7 +164,7 @@ export default class RecentActivityList extends React.PureComponent { // eslint-
                 <div>Bought trails in the Sky SC</div>
               </TDMProduct>
               <TDPrice>
-                <FormattedNumber value={-8.20} style={'currency'} currency={'USD'} />
+                <FormattedNumberStyled value={-8.20} style={'currency'} currency={'USD'} />
                 <FormattedTime hour="2-digit" minute="2-digit" value={new Date()} />
               </TDPrice>
             </TR>
@@ -157,7 +179,7 @@ export default class RecentActivityList extends React.PureComponent { // eslint-
                 <div>Sent for design service</div>
               </TDMProduct>
               <TDPrice>
-                <FormattedNumber value={300.00} style={'currency'} currency={'USD'} minimumFractionDigits={2} maximumFractionDigits={2} />
+                <FormattedNumberStyled value={300.00} style={'currency'} currency={'USD'} minimumFractionDigits={2} maximumFractionDigits={2} />
                 <FormattedTime hour="2-digit" minute="2-digit" value={new Date()} />
               </TDPrice>
             </TR>
@@ -172,7 +194,7 @@ export default class RecentActivityList extends React.PureComponent { // eslint-
                 <div>Subscription</div>
               </TDMProduct>
               <TDPrice>
-                <FormattedNumber value={-19.99} style={'currency'} currency={'USD'} minimumFractionDigits={2} maximumFractionDigits={2} />
+                <FormattedNumberStyled value={-19.99} style={'currency'} currency={'USD'} minimumFractionDigits={2} maximumFractionDigits={2} />
                 <FormattedTime hour="2-digit" minute="2-digit" value={new Date()} />
               </TDPrice>
             </TR>
@@ -188,7 +210,7 @@ export default class RecentActivityList extends React.PureComponent { // eslint-
                 <div>Subscription</div>
               </TDMProduct>
               <TDPrice>
-                <FormattedNumber value={-9.99} style={'currency'} currency={'USD'} minimumFractionDigits={2} maximumFractionDigits={2} />
+                <FormattedNumberStyled value={-9.99} style={'currency'} currency={'USD'} minimumFractionDigits={2} maximumFractionDigits={2} />
                 <FormattedTime hour="2-digit" minute="2-digit" value={new Date()} />
               </TDPrice>
             </TR>
