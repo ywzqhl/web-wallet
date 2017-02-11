@@ -34,17 +34,14 @@ import {
   TotalBallance,
   Block,
 } from '../Wrapper';
-import withProgressBar from 'components/ProgressBar';
+import withProgressBar from '../../components/ProgressBar';
 import ViktorAvatar from '../../images/viktor.jpg';
 import NotificationNoneIcon from '../../images/notification-none.svg';
-import NotificationNewIcon from '../../images/notification-new.svg';
-import NotificationAlertIcon from '../../images/notification-alert.svg';
 import MessagesNoneIcon from '../../images/messages-none.svg';
 
 export function App(props) {
-
-    return (
-      <AppContainer>
+  return (
+    <AppContainer>
       <Helmet
         titleTemplate="%s - React.js Boilerplate"
         defaultTitle="React.js Boilerplate"
@@ -52,38 +49,38 @@ export function App(props) {
           { name: 'description', content: 'A React.js Boilerplate application' },
         ]}
       />
-        <Navigator />
-        <Page>
-          <PageHeader>
-            <PageHeaderSearchField id="search-site" type="search" name="search-site" placeholder="search site" />
-            <PageHeaderControls>
-              <PageHeaderControlNotifications src={NotificationNoneIcon} role="presentation" />
-              <PageHeaderMessages src={MessagesNoneIcon} role="presentation" />
-              <UserSettings />
-            </PageHeaderControls>
-          </PageHeader>
-          <PageHeaderSalute>
-            <Block>
-              <UserAvatar src={ViktorAvatar} role="presentation" />
-              <UserMessage>
-                <WelcomeBack>Welcome back, Victor!</WelcomeBack>
-                <LastLogin>Your last login was 09/06/2016 05:34:59 PM</LastLogin>
-              </UserMessage>
-            </Block>
-            <Block>
-              <TotalBallance title="total ballance">$17,288.29</TotalBallance>
-            </Block>
-            <Block>
-              <Link to="/pay-your-bills">pay your bills</Link>
-              <Link to="/transfer-money">make a transfer</Link>
-            </Block>
-          </PageHeaderSalute>
-          <PageContent>
-            {React.Children.toArray(props.children)}
-          </PageContent>
-        </Page>
-      </AppContainer>
-    );
+      <Navigator />
+      <Page>
+        <PageHeader>
+          <PageHeaderSearchField id="search-site" type="search" name="search-site" placeholder="search site" />
+          <PageHeaderControls>
+            <PageHeaderControlNotifications src={NotificationNoneIcon} role="presentation" />
+            <PageHeaderMessages src={MessagesNoneIcon} role="presentation" />
+            <UserSettings />
+          </PageHeaderControls>
+        </PageHeader>
+        <PageHeaderSalute>
+          <Block>
+            <UserAvatar src={ViktorAvatar} role="presentation" />
+            <UserMessage>
+              <WelcomeBack>Welcome back, Victor!</WelcomeBack>
+              <LastLogin>Your last login was 09/06/2016 05:34:59 PM</LastLogin>
+            </UserMessage>
+          </Block>
+          <Block>
+            <TotalBallance title="total ballance">$17,288.29</TotalBallance>
+          </Block>
+          <Block>
+            <Link to="/pay-your-bills">pay your bills</Link>
+            <Link to="/transfer-money">make a transfer</Link>
+          </Block>
+        </PageHeaderSalute>
+        <PageContent>
+          {React.Children.toArray(props.children)}
+        </PageContent>
+      </Page>
+    </AppContainer>
+  );
 }
 
 App.propTypes = {
