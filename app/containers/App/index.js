@@ -1,6 +1,6 @@
 /**
  *
- * App.react.js
+ * App
  *
  * This component is the skeleton around the actual pages, and should only
  * contain code that should be seen on all pages. (e.g. navigation bar)
@@ -12,6 +12,7 @@
  */
 
 import React from 'react';
+import Helmet from 'react-helmet';
 import { Link } from 'react-router';
 import { Navigator } from '../../components/Navigator';
 import { UserSettings } from '../../components/UserSettings';
@@ -33,22 +34,24 @@ import {
   TotalBallance,
   Block,
 } from '../Wrapper';
-
+import withProgressBar from 'components/ProgressBar';
 import ViktorAvatar from '../../images/viktor.jpg';
 import NotificationNoneIcon from '../../images/notification-none.svg';
 import NotificationNewIcon from '../../images/notification-new.svg';
 import NotificationAlertIcon from '../../images/notification-alert.svg';
 import MessagesNoneIcon from '../../images/messages-none.svg';
 
-export default class App extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
+export function App(props) {
 
-  static propTypes = {
-    children: React.PropTypes.node,
-  };
-
-  render() {
     return (
       <AppContainer>
+      <Helmet
+        titleTemplate="%s - React.js Boilerplate"
+        defaultTitle="React.js Boilerplate"
+        meta={[
+          { name: 'description', content: 'A React.js Boilerplate application' },
+        ]}
+      />
         <Navigator />
         <Page>
           <PageHeader>
@@ -76,10 +79,15 @@ export default class App extends React.PureComponent { // eslint-disable-line re
             </Block>
           </PageHeaderSalute>
           <PageContent>
-            {React.Children.toArray(this.props.children)}
+            {React.Children.toArray(props.children)}
           </PageContent>
         </Page>
       </AppContainer>
     );
-  }
 }
+
+App.propTypes = {
+  children: React.PropTypes.node,
+};
+
+export default withProgressBar(App);
