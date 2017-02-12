@@ -9,6 +9,7 @@ const AppContainer = styled.article`
   min-width: 80%;
 `;
 
+
 const Page = styled.article`
   display: flex;
   flex-direction: column;

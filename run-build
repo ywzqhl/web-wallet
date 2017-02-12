@@ -1,3 +1,32 @@
-#!/bin/bash
+#!/usr/bin/env python3.6
 
-yarn run build
+# gzip all files, set the same creation time to both the gzipped and the original ones
+
+from os import path, walk, utime, removedirs
+import gzip
+import shutil
+from datetime import datetime
+import subprocess
+
+amTime = datetime.today().timestamp()
+build_dir = './build'
+yarn_install = ['yarn', 'install']
+yarn_build_dll = ['yarn', 'build:dll']
+yarn_build = ['yarn', 'build']
+
+if(path.exists(build_dir)):
+	shutil.rmtree(build_dir)
+
+subprocess.call(yarn_install)
+subprocess.call(yarn_build_dll)
+subprocess.call(yarn_build)
+
+for (dirpath, dirnames, filenames) in walk('./build'):
+	for filename in filenames:
+		s_filename = path.join(dirpath, filename)
+		g_filename = s_filename + '.gz'
+		with open(s_filename, 'rb') as f_in:
+			with gzip.open(g_filename, 'wb') as f_out:
+				shutil.copyfileobj(f_in, f_out)
+		utime(s_filename, (amTime, amTime))
+		utime(g_filename, (amTime, amTime))

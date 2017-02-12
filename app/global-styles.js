@@ -24,6 +24,13 @@ injectGlobal`
     flex-direction: row;
     justify-content: center;
     align-items: center;
+
+    & > div {
+      display: flex;
+      flex-direction: column;
+      width: 80%;
+      min-width: 80%;
+    }
   }
 
   p,
